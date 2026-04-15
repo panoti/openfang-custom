@@ -1,0 +1,20 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base"],
+  "dockerfile": {
+    "enabled": true,
+    "automerge": true
+  },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["Dockerfile"],
+      "matchStrings": [
+        "ARG OPENFANG_VERSION=(?<currentValue>.*?)\\n"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "RightNow-AI/openfang",
+      "versioningTemplate": "semver"
+    }
+  ]
+}
