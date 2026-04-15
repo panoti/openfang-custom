@@ -6,6 +6,7 @@ WORKDIR /build
 
 # Download openfang release
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
     curl \
     && curl -L -o openfang.tar.gz https://github.com/RightNow-AI/openfang/releases/download/${OPENFANG_VERSION}/openfang-x86_64-unknown-linux-gnu.tar.gz \
     && tar -xzf openfang.tar.gz -C /build \
