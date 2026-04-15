@@ -24,7 +24,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /build/openfang /usr/local/bin/
-COPY --from=builder /build/agents /opt/openfang/agents/
+# COPY --from=builder /build/agents /opt/openfang/agents/
 
 EXPOSE 4200
 VOLUME /data
